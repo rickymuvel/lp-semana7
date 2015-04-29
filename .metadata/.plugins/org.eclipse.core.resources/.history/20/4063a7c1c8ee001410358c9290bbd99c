@@ -35,8 +35,6 @@ public class ServletProducto extends HttpServlet {
 				//Se obtiene la lista de parametros del formulario
 				List<FileItem> items = upload.parseRequest(request);
 				
-				// .get() es un archivo
-				// si es .getString() es una cadena simple.
 				Producto p = new Producto();
 				p.setNombre(items.get(0).getString());
 				p.setDescripcion(items.get(1).getString());
