@@ -23,7 +23,7 @@ public class MySqlDBConn {
 		Connection connection = null;
 		try {
 			connection =
-			DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_sesion","root","mysql");
+			DriverManager.getConnection("jdbc:mysql://localhost:3306/portal","root","mysql");
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
