@@ -1,4 +1,5 @@
-
+<!-- Este codigo valida la existencia de un usuario en sesion -->
+<jsp:include page="intranetValida.jsp" />
 <html>
 <head>
 <title>Bienvenido a la Intranet</title>
