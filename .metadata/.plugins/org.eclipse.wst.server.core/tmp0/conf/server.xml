@@ -131,7 +131,7 @@
                prefix="localhost_access_log." suffix=".txt" pattern="common" resolveHosts="false"/>
         -->
 
-      <Context docBase="C:\Users\Cibertec\muñoz\semana7\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\Cibertec\muñoz\semana7\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\LPII_sesionesInicio3" path="/LPII_sesionesInicio3" reloadable="true" source="org.eclipse.jst.jee.server:LPII_sesionesInicio3"/></Host>
+      <Context docBase="C:\Users\Cibertec\muñoz\semana7\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\Cibertec\muñoz\semana7\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\LPII_sesionesInicio3" path="/LPII_sesionesInicio3" reloadable="true" source="org.eclipse.jst.jee.server:LPII_sesionesInicio3"/><Context docBase="C:\Users\Cibertec\muñoz\semana7\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\LPII_FileUpload" path="/LPII_FileUpload" reloadable="true" source="org.eclipse.jst.jee.server:LPII_FileUpload"/></Host>
     </Engine>
   </Service>
 </Server>

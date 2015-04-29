@@ -131,7 +131,7 @@
                prefix="localhost_access_log." suffix=".txt" pattern="common" resolveHosts="false"/>
         -->
 
-      <Context docBase="LPII_sesionesInicio3" path="/LPII_sesionesInicio3" reloadable="true" source="org.eclipse.jst.jee.server:LPII_sesionesInicio3"/></Host>
+      <Context docBase="LPII_sesionesInicio3" path="/LPII_sesionesInicio3" reloadable="true" source="org.eclipse.jst.jee.server:LPII_sesionesInicio3"/><Context docBase="LPII_FileUpload" path="/LPII_FileUpload" reloadable="true" source="org.eclipse.jst.jee.server:LPII_FileUpload"/></Host>
     </Engine>
   </Service>
 </Server>

@@ -1,0 +1,62 @@
+package controlador;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+
+import patronDataAccessObjec.Factory;
+import patronDataAccessObjec.ProductoDao;
+import entidad.Producto;
+
+/**
+ * Servlet implementation class ServletProducto
+ */
+
+public class ServletProducto extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//true->se esta enviando archivos
+		boolean isMultipart = ServletFileUpload.isMultipartContent(request);
+		if(isMultipart){
+			try {
+				DiskFileItemFactory factory = new DiskFileItemFactory();
+				ServletFileUpload upload = new ServletFileUpload(factory);
+
+				//Se obtiene la lista de parametros del formulario
+				List<FileItem> items = upload.parseRequest(request);
+				
+				Producto p = new Producto();
+				p.setNombre(items.get(0).getString());
+				p.setDescripcion(items.get(1).getString());
+				p.setPrecio(Double.parseDouble(items.get(2).getString()));
+				p.setStock(Integer.parseInt(items.get(3).getString()));
+				p.setCategoria(Integer.parseInt(items.get(4).getString()));
+				p.setEstado(Integer.parseInt(items.get(5).getString()));
+				p.setNombreArchivo(items.get(6).getFieldName());
+				p.setArchivo(items.get(6).get());
+				
+				Factory fabrica = Factory.getTipo(Factory.TIPO_MYSQL);
+				ProductoDao dao = fabrica.getProducto();
+		
+				int salida = dao.inserta(p);
+				System.out.println("Insertados : " + salida);
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		request.getRequestDispatcher("/intranetProducto.jsp").forward(request, response);
+		
+	}
+
+}
