@@ -41,10 +41,7 @@ public class ServletLogin extends HttpServlet {
 				List<Menu> menus = dao.menuXUsuario(usuario.getCodigo());
 				
 				// se guarda la información del usuario en el objeto sesion
-				session.setAttribute("USUARIO_LOGEADO", usuario);
-				
-				// se guarda la información del usuario en el objeto sesion
-				session.setAttribute("MENU_LOGEADO", menus);
+				session.setAttribute("USUARIO_LOGEADO", menus);
 				
 				request.getRequestDispatcher("/intranetPrincipal.jsp").forward(request, response);
 			}
