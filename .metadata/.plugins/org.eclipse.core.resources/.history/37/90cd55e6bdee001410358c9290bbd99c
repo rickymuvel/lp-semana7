@@ -43,6 +43,8 @@ public class ServletLogin extends HttpServlet {
 				
 				List<Menu> menus = dao.menuXUsuario(usuario.getCodigo());
 				
+				
+				
 				request.getRequestDispatcher("/intranetPrincipal.jsp").forward(request, response);
 			}
 		}catch(SQLException e){
