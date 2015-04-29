@@ -1,0 +1,6 @@
+Esto lo hacemos porque la configuración del directorio anterior (sesionesInicio2) tiene una configuración diferente. El dinamyc ese estába en una version diferente.
+
+Como obtenemos la informacion de los formularios:
+
+String login = request.getParameter("txtLogin");
+String clave = request.getParameter("txtPassword");
